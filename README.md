@@ -1,6 +1,6 @@
 # Kaytlin
 
-Kaytlin is a quiet, garden inspired planner for tending to everyday life. It includes a welcoming landing page and a personal workbench with Today, Tasks, Goals, Daily Check-in, and Notes.
+Kaytlin is a quiet, garden inspired planner for tending to everyday life. Its editorial landing page introduces the project in six clear sections, followed by a personal workbench with Today, Tasks, Goals, Daily Check-in, and Notes.
 
 ## What you can do
 
