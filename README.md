@@ -1,29 +1,23 @@
-# Kaytlin
+# Quang Triệu · Content Organizer
 
-Kaytlin is a quiet, garden inspired planner for tending to everyday life. Its editorial landing page introduces the project in six clear sections, followed by a personal workbench with Today, Tasks, Goals, Daily Check-in, and Notes.
+A static project page for the Quang Triệu content organization assistant concept. The site presents its intended workflow, project components, current verification limits, a local prompt builder, and a fixed fictional demo.
 
-## What you can do
+## Pages
 
-- Add, complete, filter, and remove tasks.
-- Plant goals, add small steps, and track progress as steps are completed.
-- Choose a mood and save a short daily reflection.
-- Write notes that save automatically.
-- Use the responsive layout on desktop and mobile.
+- `index.html` — overview, workflow, tools, test status, get started, and fixed demo.
+- `workbench.html` — turns user-provided topic, requirements, and pasted text into an English instruction prompt that can be reviewed and copied.
+- `style.css` — responsive editorial layout and visual system.
+- `app.js` — local prompt generation, sample input, copy controls, and fixed fictional demo.
+- `.nojekyll` — disables Jekyll processing on GitHub Pages.
 
-Planner content is stored in local storage in the current browser. It does not sync between devices and does not connect to an AI assistant or notification service.
+## Scope
 
-## Files
-
-- `index.html` — landing page
-- `workbench.html` — personal planner
-- `style.css` — responsive garden paper styling
-- `app.js` — navigation, planner interactions, and local storage
-- `.nojekyll` — tells GitHub Pages not to run Jekyll processing
+This is a standalone static demo. It does not connect to a live assistant or API, does not upload files, and does not process real media or news. Prompt instructions are generated in the browser from text the visitor pastes. The electric-bus scenario and summary are fictional format examples. A link to ChatGPT opens that separate website; it does not connect the demo to ChatGPT.
 
 ## Run locally
 
-Open `index.html` in a browser. For a local web server, run `python -m http.server 8000` in this folder, then visit `http://localhost:8000`.
+Open `index.html` in a browser, or run `python -m http.server 8000` in this folder and visit `http://localhost:8000`.
 
 ## Publish with GitHub Pages
 
-Create a public repository named `kaytlin`, add the six website files to the root of the `main` branch, then in **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/(root)`, and save. GitHub Pages may take a few minutes to publish the first build.
+Choose **Deploy from a branch**, select `main` and `/(root)` in **Settings → Pages**, then save.
