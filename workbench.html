@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2e9">
+  <meta name="description" content="Your personal Kaytlin planner: tasks, goals, a daily check-in, and notes.">
+  <title>Your little garden — Kaytlin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body class="workbench-page">
+  <header class="workbench-header"><a class="wordmark" href="index.html"><span class="brand-flower">✿</span> kaytlin<span class="wordmark-period">.</span></a><span class="header-greeting">A little room to grow <span>✿</span></span><a class="home-link" href="index.html">← Home</a></header>
+  <div class="workbench-layout">
+    <aside class="sidebar" aria-label="Planner sections">
+      <div class="sidebar-intro"><span class="mini-flower">✿</span><span>YOUR LITTLE GARDEN</span></div>
+      <nav class="side-nav">
+        <a href="#today" class="nav-item active" data-view="today"><span>☼</span> Today</a>
+        <a href="#tasks" class="nav-item" data-view="tasks"><span>☷</span> Tasks <b class="nav-count" id="task-count">0</b></a>
+        <a href="#goals" class="nav-item" data-view="goals"><span>✿</span> Goals</a>
+        <a href="#checkin" class="nav-item" data-view="checkin"><span>♡</span> Daily Check-in</a>
+        <a href="#notes" class="nav-item" data-view="notes"><span>✎</span> Notes</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="sidebar-quote">“Little by little,<br>a little becomes a lot.”</div><div class="sidebar-sprout">♧</div><p>Saved in this browser</p></div>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="mobile-dash-nav"><a href="index.html" aria-label="Kaytlin home">✿</a><label for="mobile-view">Your little garden</label><select id="mobile-view" aria-label="Choose planner section"><option value="today">Today</option><option value="tasks">Tasks</option><option value="goals">Goals</option><option value="checkin">Daily Check-in</option><option value="notes">Notes</option></select></div>
+      <section class="dash-view is-visible" id="today" data-section="today">
+        <div class="dashboard-top"><div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR DAY, AT YOUR PACE</p><h1>Good things grow<br><em>one day at a time.</em></h1><p class="today-date" id="today-date"></p></div><div class="date-stamp"><span id="day-number">01</span><small id="month-name">TODAY</small><i>✿</i></div></div>
+        <div class="today-grid">
+          <article class="paper-card today-tasks-card"><div class="card-heading"><div><span class="card-kicker">A LITTLE LIST</span><h2>Today's tasks</h2></div><a class="text-link" href="#tasks" data-jump="tasks">See all →</a></div><form id="quick-task-form" class="quick-task-form"><label class="sr-only" for="quick-task-input">Add a task</label><input id="quick-task-input" type="text" maxlength="120" placeholder="Add one small thing..." autocomplete="off"><button aria-label="Add task">＋</button></form><div id="today-task-list" class="task-list"></div><button class="soft-button" data-jump="tasks">Tend your list <span>→</span></button></article>
+          <article class="paper-card day-note-card"><span class="card-kicker">A NOTE FOR TODAY</span><span class="note-flower">✿</span><h2>What would feel<br>like enough today?</h2><p>Let one kind intention be your compass.</p><a class="text-link" href="#checkin" data-jump="checkin">Take a moment →</a><div class="day-note-lines"></div></article>
+        </div>
+        <div class="today-lower-grid"><article class="paper-card goal-peek-card"><div class="card-heading"><div><span class="card-kicker">GROWING IN THE BACKGROUND</span><h2>A goal to nurture</h2></div><span class="goal-sparkle">✳</span></div><div id="today-goal-preview"></div><a class="text-link" href="#goals" data-jump="goals">Visit your goals →</a></article><article class="paper-card saved-peek-card"><span class="card-kicker">A MOMENT TO KEEP</span><span class="saved-icon">♡</span><h2>Your last check-in</h2><div id="today-checkin-preview"><p class="empty-note">Your reflections will find a home here.</p></div><a class="text-link" href="#checkin" data-jump="checkin">Check in with yourself →</a></article></div>
+        <div class="storage-note"><span>✿</span> Your planner is saved in this browser, just for you.</div>
+      </section>
+
+      <section class="dash-view" id="tasks" data-section="tasks">
+        <div class="section-topline"><p class="eyebrow"><span class="eyebrow-line"></span> LITTLE THINGS, LOVINGLY TENDED</p><h1>Make a little<br><em>room for doing.</em></h1><p class="view-intro">A list can hold the details while you hold the bigger picture.</p></div>
+        <article class="paper-card full-card"><div class="card-heading"><div><span class="card-kicker">YOUR TASK LIST</span><h2>One step at a time</h2></div><span class="task-total" id="tasks-total-label">0 things on your list</span></div><form id="task-form" class="add-form"><label class="sr-only" for="task-input">New task</label><input id="task-input" type="text" maxlength="120" placeholder="What would you like to do?" autocomplete="off"><button class="button button-olive">Add task <span>＋</span></button></form><div class="filter-tabs" role="group" aria-label="Filter tasks"><button type="button" class="filter-tab active" data-filter="all">All</button><button type="button" class="filter-tab" data-filter="open">Growing</button><button type="button" class="filter-tab" data-filter="done">Done</button></div><div id="all-task-list" class="task-list full-task-list"></div><div id="task-empty" class="empty-garden"><span>✿</span><p>A fresh patch of earth.<br>Add a task when you're ready.</p></div></article>
+      </section>
+
+      <section class="dash-view" id="goals" data-section="goals">
+        <div class="section-topline"><p class="eyebrow"><span class="eyebrow-line"></span> SLOW, STEADY GROWTH</p><h1>Keep tending<br><em>what matters.</em></h1><p class="view-intro">Big hopes get easier to hold when you break them into smaller steps.</p></div>
+        <article class="paper-card full-card goals-card"><div class="card-heading"><div><span class="card-kicker">YOUR GARDEN OF GOALS</span><h2>Goals to nurture</h2></div><span class="goal-sparkle">✳</span></div><form id="goal-form" class="add-form"><label class="sr-only" for="goal-input">A goal to nurture</label><input id="goal-input" type="text" maxlength="100" placeholder="A goal you'd like to tend..."><button class="button button-olive">Plant a goal <span>＋</span></button></form><div id="goal-list" class="goal-list"></div><div id="goal-empty" class="empty-garden"><span>♧</span><p>All lovely things start as a seed.<br>Plant a goal to begin.</p></div></article>
+      </section>
+
+      <section class="dash-view" id="checkin" data-section="checkin">
+        <div class="section-topline"><p class="eyebrow"><span class="eyebrow-line"></span> A MOMENT, JUST FOR YOU</p><h1>How are you<br><em>feeling today?</em></h1><p class="view-intro">No need to fix or explain it. Just notice what's here.</p></div>
+        <article class="paper-card checkin-card"><span class="card-kicker">YOUR DAILY CHECK-IN</span><h2>Choose the feeling<br>that meets you today.</h2><div class="mood-options" role="group" aria-label="Choose your mood"><button type="button" class="mood-choice" data-mood="Peaceful"><span>☼</span><small>Peaceful</small></button><button type="button" class="mood-choice" data-mood="Hopeful"><span>✿</span><small>Hopeful</small></button><button type="button" class="mood-choice" data-mood="Okay"><span>☁</span><small>Okay</small></button><button type="button" class="mood-choice" data-mood="Tender"><span>♡</span><small>Tender</small></button><button type="button" class="mood-choice" data-mood="Low-key"><span>☾</span><small>Low-key</small></button></div><label class="field-label" for="checkin-note">A few words for yourself <span>(optional)</span></label><textarea id="checkin-note" rows="4" maxlength="400" placeholder="What's on your mind? Anything you'd like to remember..."></textarea><div class="form-footer"><span id="checkin-saved-label">Your words stay in this browser.</span><button type="button" id="save-checkin" class="button button-olive">Save this moment <span>♡</span></button></div></article>
+        <article class="paper-card past-checkin-card"><div class="card-heading"><div><span class="card-kicker">LITTLE MOMENTS, KEPT</span><h2>Recent check-ins</h2></div><span class="goal-sparkle">♡</span></div><div id="checkin-history" class="checkin-history"></div></article>
+      </section>
+
+      <section class="dash-view" id="notes" data-section="notes">
+        <div class="section-topline"><p class="eyebrow"><span class="eyebrow-line"></span> THOUGHTS HAVE ROOM HERE</p><h1>Leave yourself<br><em>a little note.</em></h1><p class="view-intro">An idea, a reminder, a thought you don't want to lose. This page is yours.</p></div>
+        <article class="paper-card notes-card"><div class="notes-top"><div><span class="card-kicker">YOUR OPEN PAGE</span><h2>A place to put it down</h2></div><span class="notes-flower">✿</span></div><label class="sr-only" for="notes-editor">Your notes</label><textarea id="notes-editor" placeholder="Let your thoughts land here..."></textarea><div class="notes-footer"><span><i class="save-dot"></i><span id="notes-save-status">Saved in this browser</span></span><span id="notes-word-count">0 words</span></div></article><p class="notes-whisper">Come back whenever you need. Your notes will be here in this browser.</p>
+      </section>
+      <footer class="dashboard-footer"><span>✿</span> Made for the days as they are. <a href="index.html">Kaytlin home ↗</a></footer>
+    </main>
+  </div>
+</body>
+</html>
